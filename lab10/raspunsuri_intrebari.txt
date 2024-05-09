@@ -1,0 +1,19 @@
+1. What does the program do? What is the precondition? What is the postcon-
+dition?
+
+Programul primeste doua numere intregi si returneaza un numar care are valoarea intre cele doua numere. Preconditia este data de linia: requires r-p > 1 si asigura ca diferenta dintre cele doua variabile este > 1 pentru a putea fi executat blocul de cod. Postconditia este data de linia ensures p < q < r si verifica daca dupa executia programului numarul returnat are valoarea intre numerele primite ca parametrii.
+
+
+2. What happens if you change the body of the method with q := p + 2? Give
+a counterexample.
+
+Primesc eroarea: a postcondition could not be proved on this return path
+Could not prove: q < r
+Un exemplu pentru care as primi aceasta eroare este: p = 3 and r = 5
+
+3. What happens if you change the precondition with r-p >= 1? Give a counterex-
+ample.
+
+Primesc eroarea: a postcondition could not be proved on this return path
+Could not prove: q < r
+Un exemplu pentru care as primi aceasta eroare este: p = 4 and r = 5

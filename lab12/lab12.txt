@@ -1,0 +1,17 @@
+ex. 1.1
+    var r := Triple (10) ;
+    var t := Triple (18) ;
+    print "r= ", r, ", t= ", t;
+    daca x=10, rezultatul e 30 si daca rulez var t := Triple (18) ; t va avea valoarea 54
+
+ex.1.2
+    var r := Triple (10) ;
+    print r;
+    rezultatul este 3*x; iar daca modificam conditia cu 3*x+1, avem o eroare
+
+ex.1.3
+    avem o eroare la prima si ultima asertie
+    pentru a face compilatorul sa se planga de primele doua asertii si nu de ultima:
+    assert r == 10 * x;
+    assert false;
+    assert false ;

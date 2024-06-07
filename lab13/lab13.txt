@@ -1,0 +1,83 @@
+ex.1
+
+(a) Din preconditie => x si y au aceeasi valoare; z ia valoarea x-y, care
+e 0, de exemplu daca x=5 si y=x=5 => z=5-5=0 => z=0.
+
+(b) Preconditia true inseamna ca e mereu adevarata. In program x ia val.
+100 si in postconditie se verifica daca valoarea lui x dupa executie e 
+100, ceea ce e adevarat.
+
+(c) Din preconditie, x se afla in intervalul [0,100), care ia maxim 
+valoarea 99, iar in program x ia val. x+1, care poate fi maxim 99+1=100,
+ceea ce se cere in postconditie.
+
+ex.2
+
+(a) Tripletul nu tine pentru valori initiale negative ale lui y, de ex.
+y=-10 => x=2*(-10)=-20
+
+(b) Tripletul nu tine pentru valoarea lui x=0, deoarece x=0-1=-1 < 0 =>
+nu verifica postconitia
+
+ex.3
+
+(a) {{0 <= x < 198}}
+
+(b) {{1 <= x <= N+1}}
+
+ex.4
+
+(a) {{TRUE}} sau {{x==400}}
+
+(b) {{y <= 65}}
+
+ex.5
+
+method suma(n: int) returns(sum: int)
+  requires n >= 0
+  ensures sum == n * (n + 1) / 2
+{
+    sum := 0;
+    var i := n;
+    while i >= 0
+      invariant i >= -1
+      invariant sum == (n * (n + 1) / 2) - (i * (i + 1) / 2)
+    {
+        sum := sum + i;
+        i := i - 1;
+    }
+}
+
+ex.6
+
+method produs(n: int) returns(prod: int) 
+  requires n > 0
+  ensures prod > 0
+  ensures prod == factorial(n)
+{
+    prod := 1;
+    var i := n;
+    while i > 0
+      invariant i >= 0
+      invariant prod > 0
+      invariant prod * factorial(i) == factorial(n)
+    {
+        prod := prod * i;
+        i := i - 1;
+    }
+}
+
+function factorial(n: int): int
+  requires n >= 0
+  ensures factorial(n) > 0
+{
+    if n == 0 then 1 else n * factorial(n - 1)
+}
+	
+
+
+
+
+
+
+
